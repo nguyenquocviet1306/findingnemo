@@ -13,4 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//
+//= require jquery-2.2.0.min
+//= require bootstrap.min
+//= require bootstrap-submenu
+//= require jquery.mb.YTPlayer
+//= require wow.min
+//= require bootstrap-select.min
+//= require jquery.easing.1.3
+//= require jquery.scrollUp
+//= require jquery.mCustomScrollbar.concat.min
+//= require jquery.filterizr
+//= require bootstrap-datepicker.min
+//= require app
+//
 //= require_tree .
+
