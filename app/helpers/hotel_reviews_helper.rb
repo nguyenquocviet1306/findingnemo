@@ -1,0 +1,2 @@
+module HotelReviewsHelper
+end

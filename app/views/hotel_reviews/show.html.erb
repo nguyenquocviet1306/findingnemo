@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hotel_review.user_id %>
+</p>
+
+<p>
+  <strong>Hotel:</strong>
+  <%= @hotel_review.hotel_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @hotel_review.comment %>
+</p>
+
+<p>
+  <strong>Space rating:</strong>
+  <%= @hotel_review.space_rating %>
+</p>
+
+<p>
+  <strong>Service rating:</strong>
+  <%= @hotel_review.service_rating %>
+</p>
+
+<p>
+  <strong>Security rating:</strong>
+  <%= @hotel_review.security_rating %>
+</p>
+
+<p>
+  <strong>Clean rating:</strong>
+  <%= @hotel_review.clean_rating %>
+</p>
+
+<%= link_to 'Edit', edit_hotel_review_path(@hotel_review) %> |
+<%= link_to 'Back', hotel_reviews_path %>
