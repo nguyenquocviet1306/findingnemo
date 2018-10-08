@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hotel_picture.user_id %>
+</p>
+
+<p>
+  <strong>Hotel:</strong>
+  <%= @hotel_picture.hotel_id %>
+</p>
+
+<p>
+  <strong>Picture link:</strong>
+  <%= @hotel_picture.picture_link %>
+</p>
+
+<%= link_to 'Edit', edit_hotel_picture_path(@hotel_picture) %> |
+<%= link_to 'Back', hotel_pictures_path %>
