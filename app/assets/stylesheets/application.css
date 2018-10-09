@@ -10,6 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap.min
+ *= require bootstrap-datepicker.min
+ *= require bootstrap-select.min
+ *= require bootstrap-submenu
+ *= require animate.min
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
