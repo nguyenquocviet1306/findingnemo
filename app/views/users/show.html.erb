@@ -2,38 +2,27 @@
 
 <p>
   <strong>User nick name:</strong>
-  <%= @user.user_nick_name %>
+  <%= current_user.nick_name %>
 </p>
 
 <p>
   <strong>User email:</strong>
-  <%= @user.user_email %>
-</p>
-
-<p>
-  <strong>User age:</strong>
-  <%= @user.user_age %>
+  <%= current_user.email %>
 </p>
 
 <p>
   <strong>User gender:</strong>
-  <%= @user.user_gender %>
+  <%= current_user.gender %>
 </p>
 
 <p>
   <strong>User birthday:</strong>
-  <%= @user.user_birthday %>
+  <%= current_user.birthday %>
 </p>
 
 <p>
   <strong>User picture:</strong>
-  <%= @user.user_picture %>
 </p>
 
-<p>
-  <strong>User password:</strong>
-  <%= @user.user_password %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_registration_path(@user) %> |
+<%= link_to 'Back', edit_user_registration_path %>
