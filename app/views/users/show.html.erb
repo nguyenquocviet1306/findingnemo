@@ -1,39 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User nick name:</strong>
-  <%= @user.user_nick_name %>
-</p>
-
-<p>
-  <strong>User email:</strong>
-  <%= @user.user_email %>
-</p>
-
-<p>
-  <strong>User age:</strong>
-  <%= @user.user_age %>
-</p>
-
-<p>
-  <strong>User gender:</strong>
-  <%= @user.user_gender %>
-</p>
-
-<p>
-  <strong>User birthday:</strong>
-  <%= @user.user_birthday %>
-</p>
-
-<p>
-  <strong>User picture:</strong>
-  <%= @user.user_picture %>
-</p>
-
-<p>
-  <strong>User password:</strong>
-  <%= @user.user_password %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="about-institute content-area-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+              <img src="https://thesocietypages.org/socimages/files/2009/05/vimeo.jpg" class="img-preview img-responsive" alt="about-2">  
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                <div class="about-text">
+                    <!-- title -->
+                    <div class="main-title-2">
+                        <h1><%= current_user.nick_name %></h1>
+                    </div>
+                    <p>
+                      <strong>Email:</strong>
+                      <%= current_user.email %>
+                    </p>
+                    
+                    <p>
+                      <strong>Gender:</strong>
+                      <%= current_user.gender %>
+                    </p>
+                    
+                    <p>
+                      <strong>Birthday:</strong>
+                      <%= current_user.birthday %>
+                    </p>
+                    <%= link_to 'Edit profile', edit_user_registration_path(@user), class: "btn btn-sm btn-theme" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Institute end -->

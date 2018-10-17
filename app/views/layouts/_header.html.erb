@@ -22,7 +22,7 @@
                     </li>
                     <li>
                     <% if user_signed_in? %>
-                        <%= link_to current_user.nick_name, "#" %>
+                        <%= link_to current_user.nick_name, user_path(current_user) %>
                         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
                     <% else %>
                         <%= link_to 'Login', new_user_session_path %>
