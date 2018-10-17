@@ -2743,7 +2743,7 @@ footer ul {
 }
 
 .contact-bg{
-    background: rgba(0, 0, 0, 0.04) url(../404.jpg) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url("404.jpg") top left repeat;
     background-size: cover;
     top: 0;
     width: 100%;
