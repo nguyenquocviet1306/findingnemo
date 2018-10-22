@@ -26,6 +26,7 @@ gem 'therubyracer'
 gem 'less-rails-bootstrap'
 gem 'font-awesome-rails'
 gem 'jquery-easing-rails'
+gem 'rails_admin'
 
 group :development, :test do
   gem 'byebug'
