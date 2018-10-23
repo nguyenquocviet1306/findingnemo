@@ -4,7 +4,8 @@ class HotelsController < ApplicationController
   # GET /hotels
   # GET /hotels.json
   def index
-    @hotels = Hotel.all
+    @q = Hotel.ransack(params[:q])
+    @hotels = @q.result
   end
 
   # GET /hotels/1
@@ -59,6 +60,8 @@ class HotelsController < ApplicationController
       format.html { redirect_to hotels_url, notice: 'Hotel was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  def search
   end
 
   private
