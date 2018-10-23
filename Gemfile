@@ -28,6 +28,7 @@ gem 'font-awesome-rails'
 gem 'jquery-easing-rails'
 gem 'popper'
 gem 'popper_js'
+gem 'rails_admin'
 
 group :development, :test do
   gem 'byebug'
