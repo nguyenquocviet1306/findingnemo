@@ -14,6 +14,7 @@
  *= require bootstrap-datepicker.min
  *= require bootstrap-select.min
  *= require bootstrap-submenu
+ *= require starability-all.min
  *= require animate.min
  *= require font-awesome
  *= require_tree .
