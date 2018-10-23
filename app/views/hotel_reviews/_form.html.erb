@@ -1,45 +1,47 @@
-<%= form_for(@hotel_review) do |f| %>
-  <% if @hotel_review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@hotel_review.errors.count, "error") %> prohibited this hotel_review from being saved:</h2>
-
-      <ul>
-      <% @hotel_review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">x</button>
+  <h4 class="modal-title" id="myModalLabel">Rating</h4>
+</div>
+<div class="modal-body">
+  
+  <%= form_for(@hotel_review) do |f| %>
+    <% if @hotel_review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@hotel_review.errors.count, "error") %> prohibited this hotel_review from being saved:</h2>
+  
+        <ul>
+        <% @hotel_review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= f.label :comment %><br>
+      <%= f.text_field :comment %>
+    </div>
+    <div class="field">
+      <%= f.label :space_rating %><br>
+      <%= f.number_field :space_rating %>
+    </div>
+    <div class="field">
+      <%= f.label :service_rating %><br>
+      <%= f.number_field :service_rating %>
+    </div>
+    <div class="field">
+      <%= f.label :security_rating %><br>
+      <%= f.number_field :security_rating %>
+    </div>
+    <div class="field">
+      <%= f.label :clean_rating %><br>
+      <%= f.number_field :clean_rating %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :hotel_id %><br>
-    <%= f.text_field :hotel_id %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
-  </div>
-  <div class="field">
-    <%= f.label :space_rating %><br>
-    <%= f.number_field :space_rating %>
-  </div>
-  <div class="field">
-    <%= f.label :service_rating %><br>
-    <%= f.number_field :service_rating %>
-  </div>
-  <div class="field">
-    <%= f.label :security_rating %><br>
-    <%= f.number_field :security_rating %>
-  </div>
-  <div class="field">
-    <%= f.label :clean_rating %><br>
-    <%= f.number_field :clean_rating %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary">Send</button>
+</div>

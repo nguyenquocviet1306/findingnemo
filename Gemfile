@@ -26,6 +26,8 @@ gem 'therubyracer'
 gem 'less-rails-bootstrap'
 gem 'font-awesome-rails'
 gem 'jquery-easing-rails'
+gem 'popper'
+gem 'popper_js'
 
 group :development, :test do
   gem 'byebug'

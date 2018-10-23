@@ -15,6 +15,10 @@ class HotelReviewsController < ApplicationController
   # GET /hotel_reviews/new
   def new
     @hotel_review = HotelReview.new
+    respond_to do |format|
+    format.html
+    format.js
+    end
   end
 
   # GET /hotel_reviews/1/edit
