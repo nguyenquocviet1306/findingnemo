@@ -50,9 +50,12 @@
         </a>
 
         <!-- Search area box start -->
+
         <div class="search-area-box-3 hidden-xs hidden-sm">
             <div class="search-contents">
-                <form method="GET">
+<!--                <form hotel_path, method="GET">-->
+                  <%#= form_tag(search_page_path, :method => "get") do %>
+              <%= search_form_for @q do |f| %>
                     <div class="col-lg-12 col-pad col-pad-2">
                         <div class="search-your-rooms">
                             <h2 class="hidden-xs hidden-sm">Search Your <span>Hotel</span></h2>
@@ -60,14 +63,7 @@
                     </div>
                     <div class="search-your-details">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="form-group">
-                                <select class="selectpicker search-fields form-control-2" name="room">
-                                    <option>Address</option>
-                                    <option>Thanh Xuân</option>
-                                    <option>Cầu Giấy</option>
-                                    <option>Ba Đình</option>
-                                </select>
-                            </div>
+                          <%= f.search_field :hotel_name_cont , placeholder: "Hotel Name" %>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
@@ -95,13 +91,14 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <button class="search-button btn-theme">Search</button>
+                              <%= button_tag "Search", :class => 'search-button btn-theme',:name => nil%>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+                  <% end %>
         <!-- Search area box end -->
       </div>
   </div>

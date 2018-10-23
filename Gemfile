@@ -30,6 +30,7 @@ gem 'popper'
 gem 'popper_js'
 gem 'rails_admin'
 
+
 group :development, :test do
   gem 'byebug'
 end
@@ -37,5 +38,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'ransack'
 end
 
