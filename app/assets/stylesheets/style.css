@@ -3473,7 +3473,7 @@ blockquote {
 
 /** SUB BANNER AREA START **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(../banner/sub-banner.jpg) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url("banner/sub-banner.jpg") top left repeat;
     background-size: cover;
     height: 270px;
     background-position: center center;
