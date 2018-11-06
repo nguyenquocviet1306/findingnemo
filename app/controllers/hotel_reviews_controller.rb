@@ -36,7 +36,7 @@ class HotelReviewsController < ApplicationController
 
     respond_to do |format|
       if @hotel_review.save
-        format.html { redirect_to @hotel_review, notice: 'Hotel review was successfully created.' }
+        format.html { redirect_to hotel_path(@hotel_review.hotel_id), notice: 'Your review was successfully created.' }
         format.json { render :show, status: :created, location: @hotel_review }
       else
         format.html { render :new }
