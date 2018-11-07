@@ -12,6 +12,8 @@ class HotelsController < ApplicationController
   # GET /hotels/1
   # GET /hotels/1.json
   def show
+    @hotel = Hotel.find_by params[:id]
+    @comments = @hotel.hotel_reviews
   end
 
   # GET /hotels/new
