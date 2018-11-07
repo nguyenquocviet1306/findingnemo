@@ -18,11 +18,15 @@
     <% end %>
   
     <div class="field">
+      <% if user_signed_in? %>
+        <%= f.text_field :user_id, required: true, class: 'hidden form-control', value:current_user.id %>
+      <% end %>
+      <%= f.text_field :hotel_id, required: true, class: 'hidden form-control', value:params[:hotel_id] %>
+      <!--<%= current_user.id %>|<%= params[:hotel_id] %>-->
+
       <%= f.label :comment %><br>
       <%= f.text_area :comment, class: 'form-control' %>
-    </div>
-    
-    <div class="field">
+      
       <%= f.label :space_rating %><br>
       <fieldset id="space_rating" class="starability-basic"> 
         <input type="radio" id="space_rate1" name="space_rating" value="1" /><label for="space_rate1">1 star</label>
@@ -36,9 +40,7 @@
         <input type="radio" id="space_rate9" name="space_rating" value="9" /><label for="space_rate9">9 stars</label>
         <input type="radio" id="space_rate10" name="space_rating" value="10" /><label for="space_rate10">10 stars</label>
       </fieldset>
-    </div>
-    
-    <div class="field">
+      
       <%= f.label :service_rating %><br>
       <fieldset id="service_rating" class="starability-basic"> 
         <input type="radio" id="service_rate1" name="service_rating" value="1" /><label for="service_rate1">1 star</label>
@@ -52,9 +54,7 @@
         <input type="radio" id="service_rate9" name="service_rating" value="9" /><label for="service_rate9">9 stars</label>
         <input type="radio" id="service_rate10" name="service_rating" value="10" /><label for="service_rate10">10 stars</label>
       </fieldset>
-    </div>
-    
-    <div class="field">
+      
       <%= f.label :security_rating %><br>
       <fieldset id="security_rating" class="starability-basic"> 
         <input type="radio" id="security_rate1" name="security_rating" value="1" /><label for="security_rate1">1 star</label>
@@ -68,8 +68,7 @@
         <input type="radio" id="security_rate9" name="security_rating" value="9" /><label for="security_rate9">9 stars</label>
         <input type="radio" id="security_rate10" name="security_rating" value="10" /><label for="security_rate10">10 stars</label>
       </fieldset>
-    </div>
-    <div class="field">
+      
       <%= f.label :clean_rating %><br>
       <fieldset id="clean_rating" class="starability-basic"> 
         <input type="radio" id="clean_rate1" name="clean_rating" value="1" /><label for="clean_rate1">1 star</label>
@@ -84,11 +83,8 @@
         <input type="radio" id="clean_rate10" name="clean_rating" value="10" /><label for="clean_rate10">10 stars</label>
       </fieldset>
     </div>
-    <!--<div class="actions">-->
-    <!--  <%= f.submit %>-->
-    <!--</div>-->
+    <div class="actions">
+        <%= f.submit "Send", :class => "btn btn-primary" %>
+    </div>
   <% end %>
-</div>
-<div class="modal-footer">
-  <button class="btn btn-primary">Send</button>
 </div>

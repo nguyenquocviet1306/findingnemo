@@ -29,10 +29,14 @@ class HotelReviewsController < ApplicationController
   # POST /hotel_reviews.json
   def create
     @hotel_review = HotelReview.new(hotel_review_params)
+    @hotel_review.space_rating = params[:space_rating]
+    @hotel_review.service_rating = params[:service_rating]
+    @hotel_review.security_rating = params[:security_rating]
+    @hotel_review.clean_rating = params[:clean_rating]
 
     respond_to do |format|
       if @hotel_review.save
-        format.html { redirect_to @hotel_review, notice: 'Hotel review was successfully created.' }
+        format.html { redirect_to hotel_path(@hotel_review.hotel_id), notice: 'Your review was successfully created.' }
         format.json { render :show, status: :created, location: @hotel_review }
       else
         format.html { render :new }
