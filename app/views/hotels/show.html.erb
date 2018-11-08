@@ -22,7 +22,7 @@
             <div class="col-lg-8 col-md-8 col-xs-12">
                 <!-- Heading courses start -->
                 <div class="heading-rooms  clearfix sidebar-widget">
-                        <h3><%= @hotel.hotel_name %></h3>
+                        <span><h3><%= @hotel.hotel_name %></h3><%= link_to 'Edit', edit_hotel_path(@hotel) %></span>
                         <p>
                             <i class="fa fa-map-marker"></i><%= @hotel.hotel_address %>
                         </p>
@@ -122,11 +122,13 @@
                     </ul>
                 </div>
                 <!-- Comments section end -->
-                <%= link_to 'Back', hotels_path %>
 
-                <%= link_to 'Comment', new_hotel_review_path,  {:remote => true, 
-                    'data-toggle' =>  "modal", 'data-target' => '#modal-window', 
-                    class: 'btn btn-md btn-theme'}  %>
+                <%= link_to 'Comment', new_hotel_review_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-md btn-theme'}  %>
+                <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content"></div>
+                  </div>
+                </div>
             </div>
                     
                 </div>
@@ -135,15 +137,6 @@
     </div>
 </div>
 <!-- Rooms detail section end -->
-
-<%= link_to 'Edit', edit_hotel_path(@hotel) %>
-
-<%= link_to 'Comment', new_hotel_review_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-md btn-theme'}  %>
-<div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content"></div>
-  </div>
-</div>
 
 <!-- Footer start -->
 <footer class="main-footer clearfix">
