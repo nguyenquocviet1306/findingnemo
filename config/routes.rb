@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  resources :hotel_reviews, :only => [:index,:create,:show]
+  resources :hotel_reviews, :only => [:index,:create,:show,:update,:destroy]
   get "/hotel_reviews/:hotel_id/new" => "hotel_reviews#new", as: :new_hotel_review
+  get "/hotel_reviews/:hotel_id/:id/edit" => "hotel_reviews#edit", as: :edit_hotel_review
   resources :hotel_pictures
   resources :hotels
   root "hotels#index"
