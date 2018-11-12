@@ -3274,6 +3274,11 @@ blockquote {
     font-size: .9em;
 }
 
+.comment-meta-actions {
+    float: right;
+    font-size: .9em;
+}
+
 .comment-body {
     color: gray;
     margin-top: 10px;

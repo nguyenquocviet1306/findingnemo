@@ -23,6 +23,11 @@ class HotelReviewsController < ApplicationController
 
   # GET /hotel_reviews/1/edit
   def edit
+    @hotel_review = HotelReview.find(params[:id])
+    respond_to do |format|
+    format.html
+    format.js
+    end
   end
 
   # POST /hotel_reviews
@@ -49,9 +54,14 @@ class HotelReviewsController < ApplicationController
   # PATCH/PUT /hotel_reviews/1.json
   def update
     respond_to do |format|
+      @hotel_review.space_rating = params[:space_rating]
+      @hotel_review.service_rating = params[:service_rating]
+      @hotel_review.security_rating = params[:security_rating]
+      @hotel_review.clean_rating = params[:clean_rating]
+      
       if @hotel_review.update(hotel_review_params)
-        format.html { redirect_to @hotel_review, notice: 'Hotel review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @hotel_review }
+        format.html { redirect_to hotel_path(@hotel_review.hotel_id), notice: 'Your review was successfully edited.' }
+        format.json { render :show, status: :created, location: @hotel_review }
       else
         format.html { render :edit }
         format.json { render json: @hotel_review.errors, status: :unprocessable_entity }
@@ -64,7 +74,7 @@ class HotelReviewsController < ApplicationController
   def destroy
     @hotel_review.destroy
     respond_to do |format|
-      format.html { redirect_to hotel_reviews_url, notice: 'Hotel review was successfully destroyed.' }
+      format.html { redirect_to hotel_path(@hotel_review.hotel_id), notice: 'Hotel review was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
