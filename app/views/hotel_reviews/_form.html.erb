@@ -87,3 +87,14 @@
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  radiobtn1 = document.getElementById("space_rate"+<%= @hotel_review.space_rating %>);
+  radiobtn1.checked = true;
+  radiobtn2 = document.getElementById("service_rate"+<%= @hotel_review.service_rating %>);
+  radiobtn2.checked = true;
+  radiobtn3 = document.getElementById("security_rate"+<%= @hotel_review.security_rating %>);
+  radiobtn3.checked = true;
+  radiobtn4 = document.getElementById("clean_rate"+<%= @hotel_review.clean_rating %>);
+  radiobtn4.checked = true;
+</script>
