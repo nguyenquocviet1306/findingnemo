@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20181108120915) do
     t.string   "hotel_name",         null: false
     t.string   "hotel_address",      null: false
     t.string   "hotel_phone_number", null: false
-    t.integer  "hotel_price"
     t.string   "hotel_pr"
     t.integer  "hotel_area"
     t.integer  "hotel_rating"
