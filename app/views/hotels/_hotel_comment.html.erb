@@ -16,16 +16,8 @@
             <div class="clearfix"></div>
             <div class="comment-body">
                 <div class="comment-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                    <i class="fa fa-star-o"></i>
+                   <%= comment.get_avarage %>
+                   <i class="fa fa-star"></i>
                 </div>
                 <div class="comment-meta-actions">
                     <% if comment.user.id == current_user.id %>
