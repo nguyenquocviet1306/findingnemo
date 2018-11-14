@@ -32,7 +32,7 @@
         <input type="radio" id="space_rate2" name="space_rating" value="2" /><label for="space_rate2">2 stars</label>
         <input type="radio" id="space_rate3" name="space_rating" value="3" /><label for="space_rate3">3 stars</label>
         <input type="radio" id="space_rate4" name="space_rating" value="4" /><label for="space_rate4">4 stars</label>
-        <input type="radio" id="space_rate5" name="space_rating" value="5" /><label for="space_rate5">5 stars</label>
+        <input type="radio" id="space_rate5" name="space_rating" value="5" checked="checked" /><label for="space_rate5">5 stars</label>
         <input type="radio" id="space_rate6" name="space_rating" value="6" /><label for="space_rate6">6 stars</label>
         <input type="radio" id="space_rate7" name="space_rating" value="7" /><label for="space_rate7">7 stars</label>
         <input type="radio" id="space_rate8" name="space_rating" value="8" /><label for="space_rate8">8 stars</label>
@@ -46,7 +46,7 @@
         <input type="radio" id="service_rate2" name="service_rating" value="2" /><label for="service_rate2">2 stars</label>
         <input type="radio" id="service_rate3" name="service_rating" value="3" /><label for="service_rate3">3 stars</label>
         <input type="radio" id="service_rate4" name="service_rating" value="4" /><label for="service_rate4">4 stars</label>
-        <input type="radio" id="service_rate5" name="service_rating" value="5" /><label for="service_rate5">5 stars</label>
+        <input type="radio" id="service_rate5" name="service_rating" value="5" checked="checked" /><label for="service_rate5">5 stars</label>
         <input type="radio" id="service_rate6" name="service_rating" value="6" /><label for="service_rate6">6 stars</label>
         <input type="radio" id="service_rate7" name="service_rating" value="7" /><label for="service_rate7">7 stars</label>
         <input type="radio" id="service_rate8" name="service_rating" value="8" /><label for="service_rate8">8 stars</label>
@@ -60,7 +60,7 @@
         <input type="radio" id="security_rate2" name="security_rating" value="2" /><label for="security_rate2">2 stars</label>
         <input type="radio" id="security_rate3" name="security_rating" value="3" /><label for="security_rate3">3 stars</label>
         <input type="radio" id="security_rate4" name="security_rating" value="4" /><label for="security_rate4">4 stars</label>
-        <input type="radio" id="security_rate5" name="security_rating" value="5" /><label for="security_rate5">5 stars</label>
+        <input type="radio" id="security_rate5" name="security_rating" value="5" checked="checked" /><label for="security_rate5">5 stars</label>
         <input type="radio" id="security_rate6" name="security_rating" value="6" /><label for="security_rate6">6 stars</label>
         <input type="radio" id="security_rate7" name="security_rating" value="7" /><label for="security_rate7">7 stars</label>
         <input type="radio" id="security_rate8" name="security_rating" value="8" /><label for="security_rate8">8 stars</label>
@@ -74,7 +74,7 @@
         <input type="radio" id="clean_rate2" name="clean_rating" value="2" /><label for="clean_rate2">2 stars</label>
         <input type="radio" id="clean_rate3" name="clean_rating" value="3" /><label for="clean_rate3">3 stars</label>
         <input type="radio" id="clean_rate4" name="clean_rating" value="4" /><label for="clean_rate4">4 stars</label>
-        <input type="radio" id="clean_rate5" name="clean_rating" value="5" /><label for="clean_rate5">5 stars</label>
+        <input type="radio" id="clean_rate5" name="clean_rating" value="5" checked="checked" /><label for="clean_rate5">5 stars</label>
         <input type="radio" id="clean_rate6" name="clean_rating" value="6" /><label for="clean_rate6">6 stars</label>
         <input type="radio" id="clean_rate7" name="clean_rating" value="7" /><label for="clean_rate7">7 stars</label>
         <input type="radio" id="clean_rate8" name="clean_rating" value="8" /><label for="clean_rate8">8 stars</label>
@@ -87,3 +87,14 @@
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  radiobtn1 = document.getElementById("space_rate"+<%= @hotel_review.space_rating %>);
+  radiobtn1.checked = true;
+  radiobtn2 = document.getElementById("service_rate"+<%= @hotel_review.service_rating %>);
+  radiobtn2.checked = true;
+  radiobtn3 = document.getElementById("security_rate"+<%= @hotel_review.security_rating %>);
+  radiobtn3.checked = true;
+  radiobtn4 = document.getElementById("clean_rate"+<%= @hotel_review.clean_rating %>);
+  radiobtn4.checked = true;
+</script>
