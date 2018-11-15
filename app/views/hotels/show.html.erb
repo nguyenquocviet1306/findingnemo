@@ -22,7 +22,16 @@
             <div class="col-lg-8 col-md-8 col-xs-12">
                 <!-- Heading courses start -->
                 <div class="heading-rooms  clearfix sidebar-widget">
-                        <span><h3><%= @hotel.hotel_name %></h3><%= link_to 'Edit', edit_hotel_path(@hotel) %></span>
+                        <span>
+                            <h3><%= @hotel.hotel_name %></h3>
+                            <%= link_to 'Edit', edit_hotel_path(@hotel) %>|
+                            <%= link_to 'Add Room', new_room_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-room-window'}  %>
+                            <div id="modal-room-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content"></div>
+                              </div>
+                            </div>
+                        </span>
                         <p>
                             <i class="fa fa-map-marker"></i><%= @hotel.hotel_address %>
                         </p>
@@ -97,10 +106,21 @@
                                     <div class="tab-pane fade active in" id="tab1default">
                                         <div class="divv">
                                             <!-- Title -->
-                                            <h3>Rooms Description</h3>
+                                            <h3>Hotel Description</h3>
                                             <!-- paragraph -->
                                             <p><%= @hotel.hotel_pr %></p>
-                                        </div>                                 
+                                        </div>
+                                                                
+                                        <!-- Rooms section start -->
+                                        <div class="divv">
+                                            <!-- Title -->
+                                            <h3>We have many rooms</h3>
+                                            
+                                            <ul class="comments list-group list-group-flush">
+                                                <%= render "hotels/hotel_room" %>
+                                            </ul>
+                                        </div>
+                                        <!-- Rooms section end -->
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +134,7 @@
                 <div class="comments-section sidebar-widget">
                     <!-- Main Title 2 -->
                     <div class="main-title-2">
-                        <h1><span>Rooms </span> Reviews</h1>
+                        <h1><span>Hotel </span> Reviews</h1>
                     </div>
 
                     <ul class="comments list-group list-group-flush">

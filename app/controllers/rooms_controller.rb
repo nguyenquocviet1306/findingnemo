@@ -28,7 +28,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        format.html { redirect_to hotel_path(@room.hotel_id), notice: 'Room was successfully created.' }
         format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.fetch(:room, {})
+      params.require(:room).permit(:room_type, :price, :picture_link, :hotel_id)
     end
 end
