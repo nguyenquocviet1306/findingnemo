@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get "/hotel_reviews/:hotel_id/:id/edit" => "hotel_reviews#edit", as: :edit_hotel_review
   resources :hotel_pictures
   resources :hotels
+  resources :rooms, :only => [:index,:create,:show,:update,:destroy]
+  get "/rooms/:hotel_id/new" => "rooms#new", as: :new_room
+  get "/rooms/:hotel_id/:id/edit" => "rooms#edit", as: :edit_room
   root "hotels#index"
   resources :users, :only => [:show]
 end

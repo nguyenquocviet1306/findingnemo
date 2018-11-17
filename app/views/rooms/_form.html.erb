@@ -1,0 +1,38 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">x</button>
+  <h4 class="modal-title" id="myModalLabel">Room</h4>
+</div>
+<div class="modal-body">
+  
+  <%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :hotel_id, required: true, class: 'hidden form-control', value:params[:hotel_id] %>
+    
+    <%= f.label :room_type %><br>
+    <%= f.select :room_type, ['Single Room', 'Double Room', 'Luxury Room', 'Family Room'], class: 'form-control' %><br>
+    
+    <%= f.label :price %> (per day in VND)<br>
+    <%= f.number_field :price, size: '10', class: 'form-control' %>
+    
+    <%= f.label :picture_link %> (paste room's photo link here )<br>
+    <%= f.text_field :picture_link, class: 'form-control' %>
+  </div>
+    
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+</div>
