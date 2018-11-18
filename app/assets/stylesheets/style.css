@@ -1250,6 +1250,12 @@ b, strong {
     color: #757575;
 }
 
+.search-area-box-3 .search-contents .textfield-default {
+    background: #ececec !important;
+    border: solid 1px #ececec !important;
+    color: #757575;
+}
+
 .datepicker, .datepicker:focus {
     border-radius: 0px;
     outline: none;
@@ -3268,6 +3274,11 @@ blockquote {
     font-size: .9em;
 }
 
+.comment-meta-actions {
+    float: right;
+    font-size: .9em;
+}
+
 .comment-body {
     color: gray;
     margin-top: 10px;
@@ -3473,7 +3484,7 @@ blockquote {
 
 /** SUB BANNER AREA START **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(../banner/sub-banner.jpg) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url("banner/sub-banner.jpg") top left repeat;
     background-size: cover;
     height: 270px;
     background-position: center center;

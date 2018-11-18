@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  price: 
+  picture_link: 
+  hotel_id: 
+
+two:
+  type: 
+  price: 
+  picture_link: 
+  hotel_id: 

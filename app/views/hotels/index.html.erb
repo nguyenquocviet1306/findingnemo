@@ -9,7 +9,7 @@
                     <div class="banner-content banner-content-left text-left">
                         <h1 data-animation="animated fadeInDown delay-05s"><span>Welcome to</span> Finding Nemo</h1>
                         <p data-animation="animated fadeInUp delay-1s">Find your hotel and rating <br/>Easy to use</p>
-                        <a href="#" class="btn btn-md btn-theme" data-animation="animated fadeInUp delay-15s">Get Started Now</a>
+                      <%= link_to "Get Started Now", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                     <div class="banner-content banner-content-left text-left">
                         <h1 data-animation="animated fadeInLeft delay-05s"><span>Best Place To</span> Rating Hotel</h1>
                         <p data-animation="animated fadeInUp delay-05s">Truth review <br/> Lorem ipsum dolor sit amet, conconsectetuer</p>
-                        <a href="#" class="btn btn-md btn-theme" data-animation="animated fadeInUp delay-15s">Get Started Now</a>
+                         <%= link_to "Get Started Now", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <div class="banner-content banner-content-left text-left">
                         <h1 data-animation="animated fadeInLeft delay-05s"><span>Best Place</span> To Find Hotel</h1>
                         <p data-animation="animated fadeInLeft delay-1s">Easiest finding <br/> elit Lorem ipsum dolor sit amet, conconsectetuer</p>
-                        <a href="#" class="btn btn-md btn-theme" data-animation="animated fadeInLeft delay-15s">Get Started Now</a>
+                      <%= link_to "Get Started Now", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,6 @@
 
         <div class="search-area-box-3 hidden-xs hidden-sm">
             <div class="search-contents">
-<!--                <form hotel_path, method="GET">-->
-                  <%#= form_tag(search_page_path, :method => "get") do %>
               <%= search_form_for @q do |f| %>
                     <div class="col-lg-12 col-pad col-pad-2">
                         <div class="search-your-rooms">
@@ -63,7 +61,11 @@
                     </div>
                     <div class="search-your-details">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                          <%= f.search_field :hotel_name_cont , placeholder: "Hotel Name" %>
+                          <div class="form-group">
+                            <%= f.search_field :hotel_name_cont ,
+                              class: "btn-default search-fields",
+                              placeholder: "Hotel Name" %>
+                          </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
@@ -78,16 +80,9 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="form-group">
-                                <select class="selectpicker search-fields form-control-2" name="children">
-                                    <option>Price</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
+                              <%= f.search_field :hotel_address_cont,
+                                class: "btn-default",
+                                placeholder: "Hotel Address" %>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class="form-group">
@@ -95,16 +90,16 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                  <% end %>
             </div>
         </div>
-                  <% end %>
+                  
         <!-- Search area box end -->
       </div>
   </div>
 <!-- Banner end -->
 
-<!-- Search area box 2 start -->
+ Search area box 2 start
 <div class="search-area-box-2 hidden-lg hidden-md">
     <div class="container">
         <div class="search-contents">
@@ -176,7 +171,7 @@
 <!-- Search area box 2 end -->
 
 <!-- Hotel section start -->
-<div class="content-area-13 hotel-section">
+<div class="content-area-2 hotel-section">
   <div class="container">
     <!-- Main title -->
     <div class="main-title">
@@ -194,17 +189,24 @@
             <div class="heading">
               <div class="title">
                 <h3>
-                  <a href="rooms-details.html"><%= hotel.hotel_name %></a>
+                  <a href="/hotels/<%= hotel.id %>"><%= hotel.hotel_name %></a>
                 </h3>
               </div>
             </div>
             <p><%= hotel.hotel_pr %></p>
             <p>Address : <%= hotel.hotel_address %></p>
-            <a href="rooms-details.html" class="read-more-btn">View Details</a>
+            <a href="/hotels/<%= hotel.id %>" class="read-more-btn">View Details</a>
           </div>
         </div>
       </div>
       <% end %>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <div class="digg_pagination">
+            <%= will_paginate @hotels %>
+          </div>
+        </div>
+      </div>
 
 
     </div>
@@ -226,7 +228,7 @@
                 <h1>FINDING NEMO</h1>
               </a>
             </div>
-            <p>Lorem ipsum dolor sit amet, conser adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a conser nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam.</p>
+            <p>The best hotel review page of the world</p>
           </div>
         </div>
         <!-- Contact Us -->
