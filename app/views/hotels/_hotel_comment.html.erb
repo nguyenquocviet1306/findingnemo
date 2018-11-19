@@ -1,0 +1,40 @@
+<% @comments.each do |comment| %>
+<li class="list-group-item">
+    <div class="comment">
+        <div class="comment-author">
+            <a href="#">
+                <%= image_tag("https://thesocietypages.org/socimages/files/2009/05/vimeo.jpg", alt: "big-img-3") %>
+            </a>
+        </div>
+        <div class="comment-content mb-0">
+            <div class="comment-meta">
+                <div class="comment-meta-author"><%= comment.user.nick_name %></div>
+                <div class="comment-meta-date">
+                    <span class="hidden-xs"><%= comment.created_at %></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="comment-body">
+                <div class="comment-rating">
+                   <%= comment.get_avarage %>
+                   <i class="fa fa-star"></i>
+                </div>
+                <div class="comment-meta-actions">
+                    <% if comment.user.id == current_user.id %>
+                    <%= link_to 'Edit', edit_hotel_review_path(id: comment.id, hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-edit-window'}  %>
+                    <div id="modal-edit-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content"></div>
+                      </div>
+                    </div>
+                    |
+                    <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                </div>
+                <p><%= comment.comment %></p>
+            </div>
+        </div>
+    </div>
+    
+</li>
+<% end %>

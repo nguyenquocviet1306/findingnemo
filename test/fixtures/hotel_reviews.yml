@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  hotel_id: 
+  comment: MyString
+  space_rating: 1
+  service_rating: 1
+  security_rating: 1
+  clean_rating: 1
+
+two:
+  user_id: 1
+  hotel_id: 
+  comment: MyString
+  space_rating: 1
+  service_rating: 1
+  security_rating: 1
+  clean_rating: 1

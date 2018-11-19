@@ -1,0 +1,100 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">x</button>
+  <h4 class="modal-title" id="myModalLabel">Rating</h4>
+</div>
+<div class="modal-body">
+  
+  <%= form_for(@hotel_review) do |f| %>
+    <% if @hotel_review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@hotel_review.errors.count, "error") %> prohibited this hotel_review from being saved:</h2>
+  
+        <ul>
+        <% @hotel_review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <% if user_signed_in? %>
+        <%= f.text_field :user_id, required: true, class: 'hidden form-control', value:current_user.id %>
+      <% end %>
+      <%= f.text_field :hotel_id, required: true, class: 'hidden form-control', value:params[:hotel_id] %>
+      
+      <%= f.label :comment %><br>
+      <%= f.text_area :comment, class: 'form-control' %>
+      
+      <%= f.label :space_rating %><br>
+      <fieldset id="space_rating" class="starability-basic"> 
+        <input type="radio" id="space_rate1" name="space_rating" value="1" /><label for="space_rate1">1 star</label>
+        <input type="radio" id="space_rate2" name="space_rating" value="2" /><label for="space_rate2">2 stars</label>
+        <input type="radio" id="space_rate3" name="space_rating" value="3" /><label for="space_rate3">3 stars</label>
+        <input type="radio" id="space_rate4" name="space_rating" value="4" /><label for="space_rate4">4 stars</label>
+        <input type="radio" id="space_rate5" name="space_rating" value="5" checked="checked" /><label for="space_rate5">5 stars</label>
+        <input type="radio" id="space_rate6" name="space_rating" value="6" /><label for="space_rate6">6 stars</label>
+        <input type="radio" id="space_rate7" name="space_rating" value="7" /><label for="space_rate7">7 stars</label>
+        <input type="radio" id="space_rate8" name="space_rating" value="8" /><label for="space_rate8">8 stars</label>
+        <input type="radio" id="space_rate9" name="space_rating" value="9" /><label for="space_rate9">9 stars</label>
+        <input type="radio" id="space_rate10" name="space_rating" value="10" /><label for="space_rate10">10 stars</label>
+      </fieldset>
+      
+      <%= f.label :service_rating %><br>
+      <fieldset id="service_rating" class="starability-basic"> 
+        <input type="radio" id="service_rate1" name="service_rating" value="1" /><label for="service_rate1">1 star</label>
+        <input type="radio" id="service_rate2" name="service_rating" value="2" /><label for="service_rate2">2 stars</label>
+        <input type="radio" id="service_rate3" name="service_rating" value="3" /><label for="service_rate3">3 stars</label>
+        <input type="radio" id="service_rate4" name="service_rating" value="4" /><label for="service_rate4">4 stars</label>
+        <input type="radio" id="service_rate5" name="service_rating" value="5" checked="checked" /><label for="service_rate5">5 stars</label>
+        <input type="radio" id="service_rate6" name="service_rating" value="6" /><label for="service_rate6">6 stars</label>
+        <input type="radio" id="service_rate7" name="service_rating" value="7" /><label for="service_rate7">7 stars</label>
+        <input type="radio" id="service_rate8" name="service_rating" value="8" /><label for="service_rate8">8 stars</label>
+        <input type="radio" id="service_rate9" name="service_rating" value="9" /><label for="service_rate9">9 stars</label>
+        <input type="radio" id="service_rate10" name="service_rating" value="10" /><label for="service_rate10">10 stars</label>
+      </fieldset>
+      
+      <%= f.label :security_rating %><br>
+      <fieldset id="security_rating" class="starability-basic"> 
+        <input type="radio" id="security_rate1" name="security_rating" value="1" /><label for="security_rate1">1 star</label>
+        <input type="radio" id="security_rate2" name="security_rating" value="2" /><label for="security_rate2">2 stars</label>
+        <input type="radio" id="security_rate3" name="security_rating" value="3" /><label for="security_rate3">3 stars</label>
+        <input type="radio" id="security_rate4" name="security_rating" value="4" /><label for="security_rate4">4 stars</label>
+        <input type="radio" id="security_rate5" name="security_rating" value="5" checked="checked" /><label for="security_rate5">5 stars</label>
+        <input type="radio" id="security_rate6" name="security_rating" value="6" /><label for="security_rate6">6 stars</label>
+        <input type="radio" id="security_rate7" name="security_rating" value="7" /><label for="security_rate7">7 stars</label>
+        <input type="radio" id="security_rate8" name="security_rating" value="8" /><label for="security_rate8">8 stars</label>
+        <input type="radio" id="security_rate9" name="security_rating" value="9" /><label for="security_rate9">9 stars</label>
+        <input type="radio" id="security_rate10" name="security_rating" value="10" /><label for="security_rate10">10 stars</label>
+      </fieldset>
+      
+      <%= f.label :clean_rating %><br>
+      <fieldset id="clean_rating" class="starability-basic"> 
+        <input type="radio" id="clean_rate1" name="clean_rating" value="1" /><label for="clean_rate1">1 star</label>
+        <input type="radio" id="clean_rate2" name="clean_rating" value="2" /><label for="clean_rate2">2 stars</label>
+        <input type="radio" id="clean_rate3" name="clean_rating" value="3" /><label for="clean_rate3">3 stars</label>
+        <input type="radio" id="clean_rate4" name="clean_rating" value="4" /><label for="clean_rate4">4 stars</label>
+        <input type="radio" id="clean_rate5" name="clean_rating" value="5" checked="checked" /><label for="clean_rate5">5 stars</label>
+        <input type="radio" id="clean_rate6" name="clean_rating" value="6" /><label for="clean_rate6">6 stars</label>
+        <input type="radio" id="clean_rate7" name="clean_rating" value="7" /><label for="clean_rate7">7 stars</label>
+        <input type="radio" id="clean_rate8" name="clean_rating" value="8" /><label for="clean_rate8">8 stars</label>
+        <input type="radio" id="clean_rate9" name="clean_rating" value="9" /><label for="clean_rate9">9 stars</label>
+        <input type="radio" id="clean_rate10" name="clean_rating" value="10" /><label for="clean_rate10">10 stars</label>
+      </fieldset>
+    </div>
+    <div class="actions">
+        <%= f.submit "Send", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  radiobtn1 = document.getElementById("space_rate"+<%= @hotel_review.space_rating %>);
+  radiobtn1.checked = true;
+  radiobtn2 = document.getElementById("service_rate"+<%= @hotel_review.service_rating %>);
+  radiobtn2.checked = true;
+  radiobtn3 = document.getElementById("security_rate"+<%= @hotel_review.security_rating %>);
+  radiobtn3.checked = true;
+  radiobtn4 = document.getElementById("clean_rate"+<%= @hotel_review.clean_rating %>);
+  radiobtn4.checked = true;
+</script>

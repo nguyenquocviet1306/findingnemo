@@ -1,0 +1,29 @@
+<%= form_for(@hotel_picture) do |f| %>
+  <% if @hotel_picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotel_picture.errors.count, "error") %> prohibited this hotel_picture from being saved:</h2>
+
+      <ul>
+      <% @hotel_picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hotel_id %><br>
+    <%= f.number_field :hotel_id %>
+  </div>
+  <div class="field">
+    <%= f.label :picture_link %><br>
+    <%= f.text_field :picture_link %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

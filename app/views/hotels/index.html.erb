@@ -1,0 +1,332 @@
+<!-- Banner start -->
+<div class="banner banner-style-3 banner-max-height">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <%= image_tag("banner/banner-slider-3.jpg", alt: "banner-slider-3")%>
+                <div class="carousel-caption banner-slider-inner banner-top-align">
+                    <div class="banner-content banner-content-left text-left">
+                        <h1 data-animation="animated fadeInDown delay-05s"><span>Welcome to</span> Finding Nemo</h1>
+                        <p data-animation="animated fadeInUp delay-1s">Find your hotel and rating <br/>Easy to use</p>
+                      <%= link_to "Register New Hotel", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag("banner/banner-slider-2.jpg", alt: "banner-slider-2")%>
+                <div class="carousel-caption banner-slider-inner banner-top-align">
+                    <div class="banner-content banner-content-left text-left">
+                        <h1 data-animation="animated fadeInLeft delay-05s"><span>Best Place To</span> Rating Hotel</h1>
+                        <p data-animation="animated fadeInUp delay-05s">Truth review <br/> Lorem ipsum dolor sit amet, conconsectetuer</p>
+                         <%= link_to "Get Started Now", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag("banner/banner-slider-1.jpg", alt: "banner-slider-1")%>
+                <div class="carousel-caption banner-slider-inner banner-top-align">
+                    <div class="banner-content banner-content-left text-left">
+                        <h1 data-animation="animated fadeInLeft delay-05s"><span>Best Place</span> To Find Hotel</h1>
+                        <p data-animation="animated fadeInLeft delay-1s">Easiest finding <br/> elit Lorem ipsum dolor sit amet, conconsectetuer</p>
+                      <%= link_to "Get Started Now", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="slider-mover-left" aria-hidden="true">
+                <i class="fa fa-angle-left"></i>
+            </span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="slider-mover-right" aria-hidden="true">
+                <i class="fa fa-angle-right"></i>
+            </span>
+            <span class="sr-only">Next</span>
+        </a>
+
+        <!-- Search area box start -->
+
+        <div class="search-area-box-3 hidden-xs hidden-sm">
+            <div class="search-contents">
+              <%= search_form_for @q do |f| %>
+                    <div class="col-lg-12 col-pad col-pad-2">
+                        <div class="search-your-rooms">
+                            <h2 class="hidden-xs hidden-sm">Search Your <span>Hotel</span></h2>
+                        </div>
+                    </div>
+                    <div class="search-your-details">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <div class="form-group">
+                            <%= f.search_field :hotel_name_cont ,
+                              class: "btn-default search-fields",
+                              placeholder: "Hotel Name" %>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="form-group">
+                                <select class="selectpicker search-fields form-control-2" name="adults">
+                                    <option>Rating Star</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                              <%= f.search_field :hotel_address_cont,
+                                class: "btn-default",
+                                placeholder: "Hotel Address" %>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="form-group">
+                              <%= button_tag "Search", :class => 'search-button btn-theme',:name => nil%>
+                            </div>
+                        </div>
+                    </div>
+                  <% end %>
+            </div>
+        </div>
+                  
+        <!-- Search area box end -->
+      </div>
+  </div>
+<!-- Banner end -->
+
+ Search area box 2 start
+<div class="search-area-box-2 hidden-lg hidden-md">
+    <div class="container">
+        <div class="search-contents">
+            <form method="GET">
+                <div class="row">
+                    <div class="col-md-3 col-pad col-pad-2">
+                        <div class="search-your-rooms">
+                            <h3 class="hidden-xs hidden-sm">Search</h3>
+                            <h2 class="hidden-xs hidden-sm">Your <span>Rooms</span></h2>
+                            <h2 class="hidden-lg hidden-md">Search Your <span>Rooms</span></h2>
+                        </div>
+                    </div>
+                    <div class="search-your-details">
+                        <div class="col-md-2 col-sm-4 col-xs-6 col-pad">
+                            <div class="form-group">
+                                <input type="text" class="btn-default datepicker" placeholder="Check In">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6 col-pad">
+                            <div class="form-group">
+                                <input type="text" class="btn-default datepicker" placeholder="Check Out">
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-4 col-xs-6 col-pad">
+                            <div class="form-group">
+                                <select class="selectpicker search-fields form-control-2" name="room">
+                                    <option>Room</option>
+                                    <option>Single Room</option>
+                                    <option>Double Room</option>
+                                    <option>Deluxe Room</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-4 col-xs-6 col-pad">
+                            <div class="form-group">
+                                <select class="selectpicker search-fields form-control-2" name="adults">
+                                    <option>Adult</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-4 col-xs-6 col-pad">
+                            <div class="form-group">
+                                <select class="selectpicker search-fields form-control-2" name="children">
+                                    <option>Child</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6 col-pad">
+                            <div class="form-group">
+                                <button class="search-button btn-theme">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Search area box 2 end -->
+
+<!-- Hotel section start -->
+<div class="content-area-2 hotel-section">
+  <div class="container">
+    <!-- Main title -->
+    <div class="main-title">
+      <h1><span>Our</span> Best Hotels</h1>
+      <p>These best hotels chosen by our customers</p>
+    </div>
+    <div class="row">
+      <% @hotels.each do |hotel| %>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="hotel-box-list-2 clearfix">
+          <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 col-pad">
+            <%= image_tag("room/img-9.jpg", alt: "img-9", class: "img-responsive")%>
+          </div>
+          <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
+            <div class="heading">
+              <div class="title">
+                <h3>
+                  <a href="/hotels/<%= hotel.id %>"><%= hotel.hotel_name %></a>
+                </h3>
+              </div>
+            </div>
+            <p><%= hotel.hotel_pr %></p>
+            <p>Address : <%= hotel.hotel_address %></p>
+            <a href="/hotels/<%= hotel.id %>" class="read-more-btn">View Details</a>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <div class="row">
+        <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+          <div class="digg_pagination">
+            <%= will_paginate @hotels %>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<!-- Hotel section end -->
+
+<!-- Footer start -->
+<footer class="main-footer clearfix">
+  <div class="container">
+    <!-- Footer info-->
+    <div class="footer-info">
+      <div class="row">
+        <!-- About us -->
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="footer-item">
+            <div class="main-title-2">
+              <a href="index.html">
+                <h1>FINDING NEMO</h1>
+              </a>
+            </div>
+            <p>The best hotel review page of the world</p>
+          </div>
+        </div>
+        <!-- Contact Us -->
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="footer-item">
+            <div class="main-title-2">
+              <h1>Contact Us</h1>
+            </div>
+            <ul class="personal-info">
+              <li>
+                <i class="fa fa-map-marker"></i>
+                Address: 01 - Dai Co Viet Str, Hanoi
+              </li>
+              <li>
+                <i class="fa fa-envelope"></i>
+                Email:<a href="mailto:findingnemo@gmail.com">findingnemo@gmail.com</a>
+              </li>
+              <li>
+                <i class="fa fa-phone"></i>
+                Phone: <a href="tel:0942-298-558">0942-298-558</a>
+              </li>
+              <li>
+                <i class="fa fa-fax"></i>
+                Fax: +0477 85X6 552
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+            <ul class="social-list">
+              <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+              <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Gallery -->
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="footer-item gallery">
+            <div class="main-title-2">
+              <h1>Gallery</h1>
+            </div>
+            <ul>
+              <li>
+                <a href="gallery-3column.html">
+                  <%= image_tag("room/small-img-2.jpg", alt: "small-img-2")%>
+                </a>
+              </li>
+              <li>
+                <a href="gallery-3column.html">
+                  <%= image_tag("room/small-img-4.jpg", alt: "small-img-4")%>
+                </a>
+              </li>
+              <li>
+                <a href="gallery-3column.html">
+                  <%= image_tag("room/small-img-5.jpg", alt: "small-img-5")%>
+                </a>
+              </li>
+              <li>
+                <a href="gallery-3column.html">
+                  <%= image_tag("room/small-img-3.jpg", alt: "small-img-3")%>
+                </a>
+              </li>
+              <li>
+                <a href="gallery-3column.html">
+                  <%= image_tag("room/small-img-6.jpg", alt: "small-img-6")%>
+                </a>
+              </li>
+              <li>
+                <a href="gallery-3column.html">
+                  <%= image_tag("room/small-img.jpg", alt: "small-img")%>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <!-- Newsletter -->
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="footer-item newsletter">
+            <div class="main-title-2">
+              <h1>Newsletter</h1>
+            </div>
+            <div class="newsletter-inner">
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <form action="#" method="GET">
+                <p><input type="text" class="form-contact" name="email" placeholder="Enter your email"></p>
+                <p><button type="submit" name="submitNewsletter" class="btn btn-small">
+                  Signup
+                </button></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer end -->
+
+

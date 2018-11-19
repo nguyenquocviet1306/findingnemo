@@ -1,0 +1,52 @@
+
+<!-- Content area start -->
+<div class="contact-bg overview-bgi">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Form content box start -->
+                <div class="form-content-box">
+                    <!-- logo -->
+                    <h1 style="color: white">
+                        FINDING NEMO
+                    </h1>
+                    <!-- details -->
+                    <div class="details">
+                        <h3>NEW HOTEL</h3>
+                        <!-- Form start -->
+                        <%= form_for @hotel do |f| %>
+                            <div class="form-group">
+                                <%= f.text_field :hotel_name, placeholder: :name, class: "input-text" %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.text_field :hotel_address, placeholder: :address, class: "input-text" %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.text_field :hotel_phone_number, placeholder: :phone_number, class: "input-text" %>
+                            </div>
+<!--                            <div class="form-group">-->
+                                <%#= f.text_field :hotel_price, placeholder: :price, class: "input-text" %>
+<!--                            </div>-->
+                            <div class="form-group">
+                                <%= f.text_field :hotel_pr, placeholder: :description, class: "input-text" %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.text_field :hotel_owner, placeholder: :owner, class: "input-text" %>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="image">   
+                            </div>
+                            <div class="mb-0">
+                                <button type="submit" class="btn-md btn-theme btn-block">Create</button>
+                            </div>
+                            <% end %>
+                                                                               
+                        <!-- Form end -->
+                    </div>
+                </div>
+                <!-- Form content box end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content area end -->
