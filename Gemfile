@@ -30,6 +30,8 @@ gem 'jquery-easing-rails'
 gem 'popper'
 gem 'popper_js'
 gem 'rails_admin'
+gem 'sprockets', '3.7.2'
+gem 'cancancan', '~> 1.10'
 
 
 group :development, :test do
