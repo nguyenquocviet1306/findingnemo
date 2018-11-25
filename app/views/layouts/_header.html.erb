@@ -66,9 +66,14 @@
                         </ul>
                     </li>
                     <% if user_signed_in? %>
-                    <li class="dropdown">
-                        <%= link_to "My Profile", user_path(current_user) %>
-                    </li>
+                        <li class="dropdown">
+                            <%= link_to "My Profile", user_path(current_user) %>
+                        </li>
+                        <% if current_user.admin? %>
+                        <li class="dropdown">
+                            <%= link_to "Admin", rails_admin_path %>
+                        </li>
+                        <% end %>
                     <% end %>
                     <!--<li class="dropdown">-->
                     <!--    <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">-->
