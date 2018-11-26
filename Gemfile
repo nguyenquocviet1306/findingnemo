@@ -33,6 +33,7 @@ gem 'rails_admin'
 gem 'sprockets', '3.7.2'
 gem 'cancancan', '~> 1.10'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'
