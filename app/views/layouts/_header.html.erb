@@ -3,10 +3,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-7 col-xs-12">
-                <div class="list-inline">
-                    <a href="tel:1-8X0-666-8X88"><i class="fa fa-phone"></i>0942-298-558</a>
-                    <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>findingnemo@gmail.com</a>
-                </div>
+                <!--<div class="list-inline">-->
+                <!--    <a href="tel:1-8X0-666-8X88"><i class="fa fa-phone"></i>0942-298-558</a>-->
+                <!--    <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>findingnemo@gmail.com</a>-->
+                <!--</div>-->
             </div>
             <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
                 <ul class="social-list clearfix pull-right">
@@ -52,23 +52,29 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="navbar-collapse collapse" role="navigation" aria-expanded="true" id="app-navigation">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="/" tabindex="0" aria-expanded="false">
                              Home 
                         </a>
                     </li>
-                    <!--<li class="dropdown">-->
-                    <!--    <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">-->
-                    <!--        Rating<span class="caret"></span>-->
-                    <!--    </a>-->
-                    <!--    <ul class="dropdown-menu">-->
-                    <!--        <li><a href="rooms-col-1.html">1 Star</a></li>-->
-                    <!--        <li><a href="rooms-col-2.html">2 Star</a></li>-->
-                    <!--        <li><a href="rooms-col-3.html">3 Star</a></li>-->
-                    <!--        <li><a href="rooms-col-4.html">4 Star</a></li>-->
-                    <!--        <li><a href="rooms-details.html">Hotels Details</a></li>-->
-                    <!--    </ul>-->
-                    <!--</li>-->
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
+                            Hotels<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Register", new_hotel_path %></li>
+                        </ul>
+                    </li>
+                    <% if user_signed_in? %>
+                        <li class="dropdown">
+                            <%= link_to "My Profile", user_path(current_user) %>
+                        </li>
+                        <% if current_user.admin? %>
+                        <li class="dropdown">
+                            <%= link_to "Admin", rails_admin_path %>
+                        </li>
+                        <% end %>
+                    <% end %>
                     <!--<li class="dropdown">-->
                     <!--    <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">-->
                     <!--        Contact<span class="caret"></span>-->
