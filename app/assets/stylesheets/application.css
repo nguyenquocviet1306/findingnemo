@@ -18,5 +18,6 @@
  *= require animate.min
  *= require font-awesome
  *= require_tree .
+ *= require social-share-button
  *= require_self
  */

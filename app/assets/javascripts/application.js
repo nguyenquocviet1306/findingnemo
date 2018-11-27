@@ -24,4 +24,5 @@
 //= require bootstrap-select.min
 //= require bootstrap-submenu
 //= require turbolinks
+//= require social-share-button
 //= require_tree .
