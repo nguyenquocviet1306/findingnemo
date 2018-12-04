@@ -53,6 +53,9 @@
                 <%= f.label :hotel_owner %><br>
                 <%= f.text_field :hotel_owner %>
               </div>
+              <div>
+                 <%= f.text_field :user_id, required: true, class: 'hidden form-control', value:current_user.id %>
+              </div>
               <div class="actions">
                 <%= f.submit %>
               </div>
