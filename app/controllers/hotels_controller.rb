@@ -11,9 +11,14 @@ class HotelsController < ApplicationController
   # GET /hotels/1
   # GET /hotels/1.json
   def show
+    @total = 0;
     @hotel = Hotel.find params[:id]
     @comments = @hotel.hotel_reviews
     @rooms = @hotel.rooms
+    @comments.each do |comment|
+      @total += comment.get_avarage
+    end
+    @avg = @total / @comments.length
   end
 
   # GET /hotels/new
