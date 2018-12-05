@@ -24,9 +24,11 @@
                 <div class="heading-rooms  clearfix sidebar-widget">
                         <span>
                             <h3><%= @hotel.hotel_name %></h3>
-                            <h3><%= @avg %></h3>
+                            <h4>Score: <%= @avg %></h4>
                             <%= social_share_button_tag('Share to Facebook',desc: @hotel.hotel_name) %>
-                            <%= link_to 'Edit', edit_hotel_path(@hotel) %>|
+                            <% if @hotel.user_id == current_user.id %>
+                                <%= link_to 'Edit', edit_hotel_path(@hotel) %>|
+                            <% end %>
                             <%= link_to 'Add Room', new_room_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-room-window'}  %>
                             <div id="modal-room-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">

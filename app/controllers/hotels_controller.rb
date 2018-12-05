@@ -18,7 +18,11 @@ class HotelsController < ApplicationController
     @comments.each do |comment|
       @total += comment.get_avarage
     end
-    @avg = @total / @comments.length
+    if (@comments.length!=0)
+      @avg = @total / @comments.length
+    else
+      @avg = 0
+    end
   end
 
   # GET /hotels/new
@@ -78,6 +82,8 @@ class HotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:hotel_name, :hotel_address, :hotel_phone_number, :hotel_pr, :hotel_area, :hotel_rating, :hotel_status, :hotel_owner, :image)
+      params.require(:hotel).permit(:hotel_name, :hotel_address, 
+      :hotel_phone_number, :hotel_pr, :hotel_area, :hotel_rating, :hotel_status,
+      :hotel_owner, :image, :user_id)
     end
 end
