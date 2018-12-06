@@ -19,4 +19,6 @@ class ApplicationController < ActionController::Base
         :password
     end
   end
+  add_flash_types :success, :warning, :danger, :info
+
 end

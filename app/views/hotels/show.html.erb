@@ -12,8 +12,11 @@
 </div>
 <!-- Sub Banner end -->
 
-<p id="notice"><%= notice %></p>
-
+<% flash.each do |key, value| %>
+    <div role="alert" id="my-alert" class="alert alert-<%= key %>"><%= value %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+<% end %>
 
 <!-- Rooms detail section start -->
 <div class="content-area rooms-detail-section">
@@ -26,7 +29,7 @@
                             <h3><%= @hotel.hotel_name %></h3>
                             <h4>Score: <%= @avg %></h4>
                             <%= social_share_button_tag('Share to Facebook',desc: @hotel.hotel_name) %>
-                            <% if @hotel.user_id == current_user.id %>
+                            <% if @hotel.user == current_user %>
                                 <%= link_to 'Edit', edit_hotel_path(@hotel) %>|
                             <% end %>
                             <%= link_to 'Add Room', new_room_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-room-window'}  %>

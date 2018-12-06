@@ -41,7 +41,7 @@ class HotelsController < ApplicationController
 
     respond_to do |format|
       if @hotel.save
-        format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
+        format.html { redirect_to @hotel, success: 'Hotel was successfully created.' } 
         format.json { render :show, status: :created, location: @hotel }
       else
         format.html { render :new }
