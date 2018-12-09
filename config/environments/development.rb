@@ -10,6 +10,19 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.delivery_method = :smtp
+  host = "findingnemo-ducnhanyb.c9users.io"
+  config.action_mailer.default_url_options = { host: host, protocol: "https" }
+  ActionMailer::Base.smtp_settings = {
+    address: "smtp.gmail.com",
+    domain: "mail.google.com",
+    port: 587,
+    user_name: "henchiyb@gmail.com",
+    password: "ngoan123",
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 

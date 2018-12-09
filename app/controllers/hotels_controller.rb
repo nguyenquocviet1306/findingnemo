@@ -4,12 +4,25 @@ class HotelsController < ApplicationController
   # GET /hotels
   # GET /hotels.json
   def index
-    @hotels = Hotel.all
+    @q = Hotel.ransack(params[:q])
+    @hotels = @q.result.paginate(page: params[:page], per_page: 4)
   end
 
   # GET /hotels/1
   # GET /hotels/1.json
   def show
+    @total = 0;
+    @hotel = Hotel.find params[:id]
+    @comments = @hotel.hotel_reviews
+    @rooms = @hotel.rooms
+    @comments.each do |comment|
+      @total += comment.get_avarage
+    end
+    if (@comments.length!=0)
+      @avg = @total / @comments.length
+    else
+      @avg = 0
+    end
   end
 
   # GET /hotels/new
@@ -69,6 +82,8 @@ class HotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:hotel_name, :hotel_address, :hotel_phone_number, :hotel_price, :hotel_pr, :hotel_area, :hotel_rating, :hotel_status, :hotel_owner)
+      params.require(:hotel).permit(:hotel_name, :hotel_address, 
+      :hotel_phone_number, :hotel_pr, :hotel_area, :hotel_rating, :hotel_status,
+      :hotel_owner, :image, :user_id)
     end
 end

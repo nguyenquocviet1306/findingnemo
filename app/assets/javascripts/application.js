@@ -11,6 +11,18 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-2.2.0.min
 //= require jquery_ujs
+//= require jquery.easing.1.3
+//= require jquery.filterizr
+//= require jquery.mb.YTPlayer
+//= require wow.min
+//= require jquery.mCustomScrollbar.concat.min
+//= require jquery.scrollUp
+//= require bootstrap.min
+//= require bootstrap-datepicker.min
+//= require bootstrap-select.min
+//= require bootstrap-submenu
 //= require turbolinks
+//= require social-share-button
 //= require_tree .
