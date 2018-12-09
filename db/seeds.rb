@@ -5,13 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create!([
-    {user_nick_name: 'thu_phan', user_email: 'thanhthu@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
-    {user_nick_name: 'viet_nguyen', user_email: 'quocviet@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
-    {user_nick_name: 'nhan_nguyen', user_email: 'ducnhan@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
-    {user_nick_name: 'nam_do', user_email: 'quocnam@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
-    {user_nick_name: 'quang_tran', user_email: 'minhquang@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
-])
+# User.create!([
+#     {nick_name: 'thu_phan', email: 'thanhthu@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
+#     {nick_name: 'viet_nguyen', email: 'quocviet@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
+#     {nick_name: 'nhan_nguyen', email: 'ducnhan@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
+#     {nick_name: 'nam_do', email: 'quocnam@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
+#     {nick_name: 'quang_tran', email: 'minhquang@gmail.com', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00'},
+# ])
 
 Hotel.create!([
    {hotel_name: 'Church Boutique Hotel', hotel_address: '21 Hang Ca, Ha Noi', hotel_phone_number: '024 3923 4499', hotel_pr: 'Khách sạn Church Boutique Hotel trang nhã này cung cấp dịch vụ thân thiện', hotel_area: 'Hà Nội' , hotel_owner: 'thu_phan'},
