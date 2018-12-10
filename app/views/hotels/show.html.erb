@@ -56,7 +56,11 @@
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div class="item active">
-                                        <%= image_tag @hotel.hotel_pictures.first.picture_link %>
+                                        <% if(@hotel.hotel_pictures.first) %>
+                                    <%= image_tag @hotel.hotel_pictures.first.picture_link %>
+                                  <% else %>
+                                    <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
+                                  <% end %>
                                     </div>
                                     <div class="item">
                                         <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
@@ -93,7 +97,13 @@
                             </div>
                             <!-- Indicators -->
                             <ol class="carousel-indicators thumbs visible-lg visible-md">
-                                <li data-target="#carousel-custom" data-slide-to="0" class=""><%= image_tag @hotel.hotel_pictures.first.picture_link %></li>
+                                <li data-target="#carousel-custom" data-slide-to="0" class="">
+                                    <% if(@hotel.hotel_pictures.first) %>
+                                    <%= image_tag @hotel.hotel_pictures.first.picture_link %>
+                                  <% else %>
+                                    <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
+                                  <% end %>
+                                    </li>
                                 <li data-target="#carousel-custom" data-slide-to="1" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
                                 <li data-target="#carousel-custom" data-slide-to="2" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
                                 <li data-target="#carousel-custom" data-slide-to="3" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
