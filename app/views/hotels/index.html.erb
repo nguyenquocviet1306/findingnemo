@@ -111,7 +111,17 @@
       <div class="col-lg-6 col-md-6 col-sm-6">
         <div class="hotel-box-list-2 clearfix">
           <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 col-pad">
-            <%= image_tag(hotel.hotel_pictures.first.picture_link, alt: "img-9", class: "img-responsive")%>
+            
+            
+            <% if(hotel.hotel_pictures.first) %>
+              <% if hotel.hotel_pictures.first.image_url == nil %>
+                <%= image_tag(hotel.hotel_pictures.first.picture_link, alt: "img-9", class: "img-responsive") %>
+              <% else %>
+                <%= image_tag(hotel.hotel_pictures.first.image_url, alt: "img-9", class: "img-responsive") %>
+              <% end %>
+            <% else %>
+                <%= image_tag("room/big-img-3.jpg", alt: "big-img-3", class: "img-responsive") %>
+            <% end %>
           </div>
           <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
             <div class="heading">
