@@ -33,12 +33,14 @@
                             <div class="form-group">
                                 <%= f.text_field :hotel_owner, placeholder: :owner, class: "input-text" %>
                             </div>
-                            <p>
-                                <%= f.label :Picture %>
-                             </p>
-                              <p>
-                                    <%= f.file_field :image %>
-                              </p>
+                            
+                              <%= f.fields_for @hotel_pictures do |p| %>
+                                <div class="field">
+                                      <%= p.label :Hotel_Pictures %><br>
+                                      <%= p.file_field :image, multiple: true, name: "hotel_pictures[image][]", class: "upload-image" %>
+                                </div>
+                              <% end %>
+  
                             <div class="mb-0">
                                 <button type="submit" class="btn-md btn-theme btn-block">Create</button>
                             </div>

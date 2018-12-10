@@ -25,6 +25,7 @@ class HotelPicturesController < ApplicationController
   # POST /hotel_pictures.json
   def create
     @hotel_picture = HotelPicture.new(hotel_picture_params)
+    @hotel_picture.user_id = current_user.id
 
     respond_to do |format|
       if @hotel_picture.save
