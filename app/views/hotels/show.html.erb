@@ -58,12 +58,20 @@
                                         
                                         <% if p == @hotel.hotel_pictures.last %>
                                         <div class="item active">
+                                        <% if p.image_url == nil %>
+                                        <%= image_tag p.picture_link %>
+                                        <% else %>
                                         <%= image_tag p.image_url %>
+                                        <% end%>
                                         </div>
                                         <% else %>
                                         
                                         <div class="item">
+                                        <% if p.image_url == nil %>
+                                        <%= image_tag p.picture_link %>
+                                        <% else %>
                                         <%= image_tag p.image_url %>
+                                        <% end%>
                                         </div>
                                         <% end %>
                                 <% end %>
