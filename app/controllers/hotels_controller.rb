@@ -11,9 +11,18 @@ class HotelsController < ApplicationController
   # GET /hotels/1
   # GET /hotels/1.json
   def show
-    @hotel = Hotel.find_by params[:id]
+    @total = 0;
+    @hotel = Hotel.find params[:id]
     @comments = @hotel.hotel_reviews
     @rooms = @hotel.rooms
+    @comments.each do |comment|
+      @total += comment.get_avarage
+    end
+    if (@comments.length!=0)
+      @avg = @total / @comments.length
+    else
+      @avg = 0
+    end
   end
 
   # GET /hotels/new
@@ -32,7 +41,7 @@ class HotelsController < ApplicationController
 
     respond_to do |format|
       if @hotel.save
-        format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
+        format.html { redirect_to @hotel, success: 'Hotel was successfully created.' } 
         format.json { render :show, status: :created, location: @hotel }
       else
         format.html { render :new }
@@ -73,6 +82,8 @@ class HotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hotel_params
-      params.require(:hotel).permit(:hotel_name, :hotel_address, :hotel_phone_number, :hotel_pr, :hotel_area, :hotel_rating, :hotel_status, :hotel_owner)
+      params.require(:hotel).permit(:hotel_name, :hotel_address, 
+      :hotel_phone_number, :hotel_pr, :hotel_area, :hotel_rating, :hotel_status,
+      :hotel_owner, :image, :user_id)
     end
 end

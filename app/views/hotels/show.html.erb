@@ -4,7 +4,7 @@
         <div class="breadcrumb-area">
             <h1>Hotel Detail</h1>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="active">Hotel Detail</li>
             </ul>
         </div>
@@ -12,8 +12,11 @@
 </div>
 <!-- Sub Banner end -->
 
-<p id="notice"><%= notice %></p>
-
+<% flash.each do |key, value| %>
+    <div role="alert" id="my-alert" class="alert alert-<%= key %>"><%= value %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+<% end %>
 
 <!-- Rooms detail section start -->
 <div class="content-area rooms-detail-section">
@@ -24,7 +27,11 @@
                 <div class="heading-rooms  clearfix sidebar-widget">
                         <span>
                             <h3><%= @hotel.hotel_name %></h3>
-                            <%= link_to 'Edit', edit_hotel_path(@hotel) %>|
+                            <h4>Score: <%= @avg %></h4>
+                            <%= social_share_button_tag('Share to Facebook',desc: @hotel.hotel_name) %>
+                            <% if @hotel.user == current_user %>
+                                <%= link_to 'Edit', edit_hotel_path(@hotel) %>|
+                            <% end %>
                             <%= link_to 'Add Room', new_room_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-room-window'}  %>
                             <div id="modal-room-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
@@ -48,25 +55,25 @@
                             <div class="carousel-outer">
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
                                     <div class="item active">
+                                        <%= image_tag @hotel.hotel_pictures.first.picture_link %>
+                                    </div>
+                                    <div class="item">
+                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
+                                    </div>
+                                    <div class="item">
+                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
+                                    </div>
+                                    <div class="item">
+                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
+                                    </div>
+                                    <div class="item">
+                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
+                                    </div>
+                                    <div class="item">
+                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
+                                    </div>
+                                    <div class="item">
                                         <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
                                     </div>
                                 </div>
@@ -86,7 +93,7 @@
                             </div>
                             <!-- Indicators -->
                             <ol class="carousel-indicators thumbs visible-lg visible-md">
-                                <li data-target="#carousel-custom" data-slide-to="0" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
+                                <li data-target="#carousel-custom" data-slide-to="0" class=""><%= image_tag @hotel.hotel_pictures.first.picture_link %></li>
                                 <li data-target="#carousel-custom" data-slide-to="1" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
                                 <li data-target="#carousel-custom" data-slide-to="2" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
                                 <li data-target="#carousel-custom" data-slide-to="3" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
@@ -142,7 +149,6 @@
                     </ul>
                 </div>
                 <!-- Comments section end -->
-
                 <%= link_to 'Comment', new_hotel_review_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-md btn-theme'}  %>
                 <div id="modal-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
@@ -157,56 +163,3 @@
     </div>
 </div>
 <!-- Rooms detail section end -->
-
-<!-- Footer start -->
-<footer class="main-footer clearfix">
-    <div class="container">
-        <!-- Footer info-->
-        <div class="footer-info">
-            <div class="row">
-                <!-- About us -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-item">
-                        <div class="main-title-2">
-                            <h1>FINDING NEMO</h1>
-                        </div>
-                        <p></p>
-                    </div>
-                </div>
-                <!-- Contact Us -->
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-item">
-                        <div class="main-title-2">
-                            <h1>Contact Us</h1>
-                        </div>
-                        <ul class="personal-info">
-                            <li>
-                                <i class="fa fa-map-marker"></i>
-                                Address: No 1 Dai Co Viet Street
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope"></i>
-                                Email:<a href="mailto:sales@hotelempire.com">javateam@gmail.com</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                Phone: <a href="tel:+55-417-634-7071">0123456789</a>
-                            </li>
-                        </ul>
-                        <div class="clearfix"></div>
-                        <ul class="social-list">
-                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
-                            <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer end -->
-
-

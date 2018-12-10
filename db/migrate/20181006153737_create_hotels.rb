@@ -9,6 +9,7 @@ class CreateHotels < ActiveRecord::Migration
       t.integer :hotel_rating
       t.integer :hotel_status
       t.string :hotel_owner, null: false
+      t.integer :user_id
 
       t.timestamps null: false
     end
