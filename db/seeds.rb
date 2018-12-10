@@ -33,7 +33,6 @@ Hotel.create!([
    {hotel_name: 'Moon Bay Ha Long Hotel', hotel_address: 'Tuan Chau Island, Quảng Ninh', hotel_phone_number: '0203 6339 999', hotel_pr: 'Chỗ nghỉ này cách bãi biển 1 phút đi bộ.', hotel_area: 'Hạ Long', hotel_rating: '', hotel_status: '', hotel_owner: 'nhan_nguyen', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00', user_id: 3},
    {hotel_name: 'The Light Hotel', hotel_address: '108A Vườn Đào, Bãi Cháy, Thành phố Hạ Long, Quảng Ninh', hotel_phone_number: '0203 3848 518', hotel_pr: 'Chỗ nghỉ này cách bãi biển 2 phút đi bộ.', hotel_area: 'Hạ Long', hotel_rating: '', hotel_status: '', hotel_owner: 'quang_tran', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00', user_id: 5},
    {hotel_name: 'Sapa Memory Hotel 2', hotel_address: '005 Nguyễn Viết Xuân, Sapa, Lào Cai', hotel_phone_number: '0129 462 2222', hotel_pr: 'Nằm ở thị trấn Sa Pa, cách ga cáp treo Fansipan Legend 2,8 km.', hotel_area: 'Sa Pa', hotel_rating: '', hotel_status: '', hotel_owner: 'viet_nguyen', created_at: '2018-12-9 12:35:00', updated_at: '2018-12-9 12:35:00', user_id: 2},
-   
 ]);
 p "Created #{Hotel.count} hotels"
 
