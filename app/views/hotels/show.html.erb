@@ -56,7 +56,7 @@
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div class="item active">
-                                        <%= image_tag @hotel.image_url.to_s %>
+                                        <%= image_tag @hotel.hotel_pictures.first.picture_link %>
                                     </div>
                                     <div class="item">
                                         <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>

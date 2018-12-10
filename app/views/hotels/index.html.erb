@@ -70,7 +70,7 @@
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <div class="form-group">
-                              <select class="selectpicker search-fields form-control-2" name="adults">
+                              <select class="btn-default search-fields form-control-2" name="adults">
                                   <option>Rating Star</option>
                                   <option>1</option>
                                   <option>2</option>
@@ -116,7 +116,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6">
         <div class="hotel-box-list-2 clearfix">
           <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 col-pad">
-            <%= image_tag(hotel.image_url.to_s, alt: "img-9", class: "img-responsive")%>
+            <%= image_tag(hotel.hotel_pictures.first.picture_link, alt: "img-9", class: "img-responsive")%>
           </div>
           <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 detail">
             <div class="heading">
