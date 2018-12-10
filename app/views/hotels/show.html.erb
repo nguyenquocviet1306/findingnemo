@@ -46,7 +46,6 @@
 <!--                        <h4>Price: <%#= @hotel.hotel_price %> VND</h4>-->
                 </div>
                 <!-- Heading courses end -->
-
                 <!-- sidebar start -->
                 <div class="rooms-detail-slider sidebar-widget">
                     <!--  Rooms detail slider start -->
@@ -55,31 +54,19 @@
                             <div class="carousel-outer">
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
-                                    <div class="item active">
-                                        <% if(@hotel.hotel_pictures.first) %>
-                                    <%= image_tag @hotel.hotel_pictures.first.picture_link %>
-                                  <% else %>
-                                    <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                  <% end %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
-                                    <div class="item">
-                                        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                    </div>
+                                        <% @hotel.hotel_pictures.all.each do |p| %>
+                                        
+                                        <% if p == @hotel.hotel_pictures.last %>
+                                        <div class="item active">
+                                        <%= image_tag p.image_url %>
+                                        </div>
+                                        <% else %>
+                                        
+                                        <div class="item">
+                                        <%= image_tag p.image_url %>
+                                        </div>
+                                        <% end %>
+                                <% end %>
                                 </div>
                                 <!-- Controls -->
                                 <a class="left carousel-control" href="#carousel-custom" role="button" data-slide="prev">
@@ -95,7 +82,7 @@
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
-                            <!-- Indicators -->
+                            <!-- Indicators 
                             <ol class="carousel-indicators thumbs visible-lg visible-md">
                                 <li data-target="#carousel-custom" data-slide-to="0" class="">
                                     <% if(@hotel.hotel_pictures.first) %>
@@ -112,7 +99,7 @@
                                 <li data-target="#carousel-custom" data-slide-to="6" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
                             </ol>
                         </div>
-                    </div>
+                    </div>-->
                     <!-- Rooms detail slider end -->
 
                     <!-- Rooms description start -->
