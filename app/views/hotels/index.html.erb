@@ -105,6 +105,7 @@
       <h1><span>Our</span> Best Hotels</h1>
       <p>These best hotels chosen by our customers</p>
     </div>
+    
     <div class="row">
       <% @hotels.each do |hotel| %>
       <div class="col-lg-6 col-md-6 col-sm-6">
@@ -120,13 +121,15 @@
                 </h3>
               </div>
             </div>
-            <p><%= hotel.hotel_pr %></p>
+            
+            <p style="max-height: 3.6em; line-height: 1.8em;"><%= hotel.hotel_pr %></p>
             <p>Address : <%= hotel.hotel_address %></p>
             <a href="/hotels/<%= hotel.id %>" class="read-more-btn">View Details</a>
           </div>
         </div>
       </div>
       <% end %>
+      
       <div class="row">
         <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
           <div class="digg_pagination">
