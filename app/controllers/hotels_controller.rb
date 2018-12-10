@@ -28,6 +28,8 @@ class HotelsController < ApplicationController
   # GET /hotels/new
   def new
     @hotel = Hotel.new
+    @hotel_pictures = @hotel.hotel_pictures.build
+    
   end
 
   # GET /hotels/1/edit
@@ -41,6 +43,9 @@ class HotelsController < ApplicationController
 
     respond_to do |format|
       if @hotel.save
+        params[:hotel_pictures]['image'].each do |a|
+        @hotel_pictures = @hotel.hotel_pictures.create!(:user_id => current_user.id, :image => a, :picture_link => 'link')
+      end    
         format.html { redirect_to @hotel, success: 'Hotel was successfully created.' } 
         format.json { render :show, status: :created, location: @hotel }
       else
@@ -84,6 +89,6 @@ class HotelsController < ApplicationController
     def hotel_params
       params.require(:hotel).permit(:hotel_name, :hotel_address, 
       :hotel_phone_number, :hotel_pr, :hotel_area, :hotel_rating, :hotel_status,
-      :hotel_owner, :image, :user_id)
+      :hotel_owner, :image, :user_id, hotel_pictures_attributes: [:user_id, :hotel_id, :image])
     end
 end
