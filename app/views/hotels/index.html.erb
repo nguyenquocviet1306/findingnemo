@@ -19,7 +19,7 @@
                     <div class="banner-content banner-content-left text-left">
                         <h1 data-animation="animated fadeInLeft delay-05s"><span>Best Place To</span> Rating Hotel</h1>
                         <p data-animation="animated fadeInUp delay-05s">Truth review <br/> Lorem ipsum dolor sit amet, conconsectetuer</p>
-                         <%= link_to "Get Started Now", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
+                         <%= link_to "Register New Hotel", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <div class="banner-content banner-content-left text-left">
                         <h1 data-animation="animated fadeInLeft delay-05s"><span>Best Place</span> To Find Hotel</h1>
                         <p data-animation="animated fadeInLeft delay-1s">Easiest finding <br/> elit Lorem ipsum dolor sit amet, conconsectetuer</p>
-                      <%= link_to "Get Started Now", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
+                      <%= link_to "Register New Hotel", new_hotel_path() , :class=>"btn btn-md btn-theme" %>
                     </div>
                 </div>
             </div>
@@ -69,16 +69,10 @@
                         </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                          <div class="form-group">
-                              <select class="btn-default search-fields form-control-2" name="adults">
-                                  <option>Rating Star</option>
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
-                              </select>
-                          </div>
+                        <div class="form-group">
+                          <%= f.search_field :rooms_price_lt , class: "btn-default search-fields", placeholder: "Room Price Under" %>
+                        </div>
+
                       </div>
                     </div>
                     <div class="row">
