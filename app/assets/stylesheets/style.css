@@ -984,6 +984,11 @@ b, strong {
     height: 720px;
 }
 
+.carousel-inner > .item > img {
+  /*width:640px;*/
+  height:360px;
+}
+
 .banner-content {
     align-self: center !important;
     max-width: 700px;

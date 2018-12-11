@@ -10,16 +10,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
                 <ul class="social-list clearfix pull-right">
-                    <li>
-                        <a href="#" class="facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="google">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </li>
+                
                     <li>
                     <% if user_signed_in? %>
                         <%= link_to current_user.nick_name, user_path(current_user) %>
@@ -46,7 +37,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="logo">
-                    <p>Finding Nemo</p>
+                    <p><b><big>Finding Nemo</big></b></p>
                 </div>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -66,9 +57,14 @@
                         </ul>
                     </li>
                     <% if user_signed_in? %>
-                    <li class="dropdown">
-                        <%= link_to "My Profile", user_path(current_user) %>
-                    </li>
+                        <li class="dropdown">
+                            <%= link_to "My Profile", user_path(current_user) %>
+                        </li>
+                        <% if current_user.admin? %>
+                        <li class="dropdown">
+                            <%= link_to "Admin", rails_admin_path %>
+                        </li>
+                        <% end %>
                     <% end %>
                     <!--<li class="dropdown">-->
                     <!--    <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">-->
@@ -89,9 +85,7 @@
                                 class: "btn-navbar btn btn-sm btn-theme-sm-outline btn-round" %>
                             <% end %>
                         </li>
-                    <li>
-                        <a id="header-search-btn" class="btn-navbar search-icon"><i class="fa fa-search"></i></a>
-                    </li>
+                    
                 </ul>
             </div>
 
