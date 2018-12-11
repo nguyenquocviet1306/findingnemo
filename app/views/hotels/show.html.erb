@@ -29,10 +29,10 @@
                             <h3><%= @hotel.hotel_name %></h3>
                             <h4>Score: <%= @avg %></h4>
                             <%= social_share_button_tag('Share to Facebook',desc: @hotel.hotel_name) %>
-                            <% if @hotel.user == current_user %>
+                            
                                 <%= link_to 'Edit', edit_hotel_path(@hotel) %>|
-                            <% end %>
-                            <%= link_to 'Add Room', new_room_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-room-window'}  %>
+                                <%= link_to 'Add Room', new_room_path(hotel_id: @hotel.id),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-room-window'}  %>
+                            
                             <div id="modal-room-window" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                               <div class="modal-dialog" role="document">
                                 <div class="modal-content"></div>
@@ -90,24 +90,23 @@
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
-                            <!-- Indicators 
-                            <ol class="carousel-indicators thumbs visible-lg visible-md">
-                                <li data-target="#carousel-custom" data-slide-to="0" class="">
-                                    <% if(@hotel.hotel_pictures.first) %>
-                                    <%= image_tag @hotel.hotel_pictures.first.picture_link %>
-                                  <% else %>
-                                    <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>
-                                  <% end %>
-                                    </li>
-                                <li data-target="#carousel-custom" data-slide-to="1" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
-                                <li data-target="#carousel-custom" data-slide-to="2" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
-                                <li data-target="#carousel-custom" data-slide-to="3" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
-                                <li data-target="#carousel-custom" data-slide-to="4" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
-                                <li data-target="#carousel-custom" data-slide-to="5" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
-                                <li data-target="#carousel-custom" data-slide-to="6" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>
-                            </ol>
+                            <!--<ol class="carousel-indicators thumbs visible-lg visible-md">-->
+                            <!--    <li data-target="#carousel-custom" data-slide-to="0" class="">-->
+                            <!--        <% if(@hotel.hotel_pictures.first) %>-->
+                            <!--        <%= image_tag @hotel.hotel_pictures.first.picture_link %>-->
+                            <!--      <% else %>-->
+                            <!--        <%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %>-->
+                            <!--      <% end %>-->
+                            <!--        </li>-->
+                            <!--    <li data-target="#carousel-custom" data-slide-to="1" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>-->
+                            <!--    <li data-target="#carousel-custom" data-slide-to="2" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>-->
+                            <!--    <li data-target="#carousel-custom" data-slide-to="3" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>-->
+                            <!--    <li data-target="#carousel-custom" data-slide-to="4" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>-->
+                            <!--    <li data-target="#carousel-custom" data-slide-to="5" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>-->
+                            <!--    <li data-target="#carousel-custom" data-slide-to="6" class=""><%= image_tag("room/big-img-3.jpg", alt: "big-img-3") %></li>-->
+                            <!--</ol>-->
                         </div>
-                    </div>-->
+                    </div>
                     <!-- Rooms detail slider end -->
 
                     <!-- Rooms description start -->
